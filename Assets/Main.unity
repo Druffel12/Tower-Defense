@@ -2140,7 +2140,7 @@ GameObject:
   - component: {fileID: 731053844}
   - component: {fileID: 731053843}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: StartWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2203,12 +2203,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 731053842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.015, y: 4.02, z: -19.68}
-  m_LocalScale: {x: 4.890071, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.6000001, y: 1, z: 0.0109999655}
+  m_LocalScale: {x: 0.97801447, y: 1, z: 0.20000006}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1339563220}
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &733548829
 Prefab:
@@ -3532,6 +3532,9 @@ Transform:
   - {fileID: 1699246994}
   - {fileID: 311978863}
   - {fileID: 823827725}
+  - {fileID: 731053846}
+  - {fileID: 1401343348}
+  - {fileID: 1427177102}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -3547,7 +3550,7 @@ GameObject:
   - component: {fileID: 1401343346}
   - component: {fileID: 1401343345}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: StartWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3610,12 +3613,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1401343344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.015, y: 4.02, z: -25.68}
-  m_LocalScale: {x: 4.890071, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.6000001, y: 1, z: 0.011000156}
+  m_LocalScale: {x: 0.97801447, y: 1, z: 0.20000006}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1339563220}
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427177098
 GameObject:
@@ -3629,7 +3632,7 @@ GameObject:
   - component: {fileID: 1427177100}
   - component: {fileID: 1427177099}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: StartWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3692,12 +3695,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427177098}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 46.96, y: 4.02, z: -22.7}
-  m_LocalScale: {x: 5.0842, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0039999965, y: 1, z: 0.6000001}
+  m_LocalScale: {x: 1.0168405, y: 1, z: 0.2000001}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1339563220}
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1449427303
 GameObject:
@@ -3793,6 +3796,7 @@ GameObject:
   - component: {fileID: 1488594320}
   - component: {fileID: 1488594319}
   - component: {fileID: 1488594318}
+  - component: {fileID: 1488594323}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -3814,14 +3818,15 @@ MonoBehaviour:
   enemy: {fileID: 1841325265703034, guid: 446535c7bb495e641b968d87849cd0a8, type: 2}
   SpawnCount: 1
   SpawnPoint: []
-  Spawner: 1.5
+  Spawner: 0.2
+  Wave: 0
 --- !u!23 &1488594319
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1488594317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -3877,8 +3882,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488594323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488594317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63e4fe4cdf26bf4cb9a01842260bb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledObjects:
+  - {fileID: 0}
+  ObjectToPool: {fileID: 1841325265703034, guid: 446535c7bb495e641b968d87849cd0a8,
+    type: 2}
+  AmountToPool: 10
 --- !u!1 &1498338640
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,7 +5045,7 @@ Transform:
   m_LocalScale: {x: 10.61083, y: 10.610836, z: 10.610836}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937686427
 GameObject:
