@@ -12,15 +12,23 @@ public class MouseTracker : MonoBehaviour {
         Cursor.visible = true;
     }
 
+    void OntriggerEnter(Collider other)
+    {
+        //if()
+        //{
 
-	// gets mouses input
-	void Update ()
+        //}
+    }
+
+    // gets mouses input
+    void Update ()
     {
 	    if(Input.GetButtonDown("Fire1"))
         {
-           // Ray ray = camera.main.ScreenPointToRay(Input.mousePosition);
-          //  if (Physics.Raycast(ray))
+           Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+           if (Physics.Raycast(ray))
                 Instantiate(particle, transform.position, transform.rotation);
+       
         }	
 	}
 }

@@ -6,13 +6,21 @@ public class Enemy : MonoBehaviour {
 
     public float DeerHealth = 30;
     public int PScore;
-	
-	// Update is called once per frame
-	void Update ()
+    PooledObject EnemyPool;
+
+
+    void start()
+    {
+        EnemyPool = GetComponent<PooledObject>();
+    }
+
+    // Update is called once per frame
+    //add score and return enemy too bool
+    void Update ()
     {
 		if(DeerHealth <= 0f)
         {
-            Destroy(gameObject);
+            EnemyPool.ReturnToPool();
             PScore += 5;
         }
 	}

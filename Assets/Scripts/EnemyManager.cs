@@ -37,14 +37,14 @@ public class EnemyManager : MonoBehaviour
         spawnTime -= Time.deltaTime;
         if (spawnTime <= 0.0f)
         {
-            if (SpawnCount >= 0)
+            if (SpawnCount > 0)
             {
                 // (enemy, transform.position, Quaternion.identity);
                 GameObject SpawnedDeer = ObjectPooler.SharedInstance.GetPooledObject();
 
                 SpawnedDeer.SetActive(true);
-
                 SpawnedDeer.transform.position = transform.position;
+
 
                 
 
