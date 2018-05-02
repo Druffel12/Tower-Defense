@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour {
         RB = GetComponent<Rigidbody>();
        // BulletPool.ReturnWithDelay(Lifetime);
 	}
+
+    // @cole: Capitalize the T in OnTriggerEnter
     void OntriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Deer"))

@@ -19,7 +19,6 @@ public class Gun : MonoBehaviour
     //creating bullet after a delay
 	void Update ()
     {
-        
         if (Enemy != null)
         {
             if(Enemy.Enemy)

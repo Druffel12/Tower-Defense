@@ -14,6 +14,7 @@ public class PooledObject : MonoBehaviour {
 
     public void ReturnWithDelay(float Delay)
     {
+        // @cole: Prefer not to use invoke for more control over execution
         Invoke("ReturnToPool", Delay);
     }
 }
