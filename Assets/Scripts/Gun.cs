@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public Transform barrel1;
-    public Transform barrel2;
     TurretBehavior Enemy;
     public GameObject Bullet;
-
-
+    public float FireDelay;
+    public float Timer;
 
     // Use this for initialization
     void Start ()
     {
-		
-	}
+        Enemy = GetComponentInParent<TurretBehavior>();
+    }
 	
 	// Update is called once per frame
+    //creating bullet after a delay
 	void Update ()
     {
-		if(Enemy == true)
+        
+        if (Enemy != null)
         {
-
-            Instantiate(Bullet, transform.position, Bullet.transform.rotation);
+            if(Enemy.Enemy)
+            {
+                if(Timer <= 0)
+                {
+                    Instantiate(Bullet, transform.position, transform.rotation);
+                    Timer = FireDelay;
+                }
+                
+                Timer -= Time.deltaTime;
+            }
+           
         }
 	}
 }

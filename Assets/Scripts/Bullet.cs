@@ -13,9 +13,9 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        BulletPool = GetComponent<PooledObject>(); 
+       // BulletPool = GetComponent<PooledObject>(); 
         RB = GetComponent<Rigidbody>();
-        BulletPool.ReturnWithDelay(Lifetime);
+       // BulletPool.ReturnWithDelay(Lifetime);
 	}
     void OntriggerEnter(Collider other)
     {
@@ -24,13 +24,13 @@ public class Bullet : MonoBehaviour {
             GameObject Enemy = GameObject.Find("Deer");
             Enemy enemy = Enemy.GetComponent<Enemy>();
             Enemy.GetComponent<Enemy>().DeerHealth -= Damage;
-            BulletPool.ReturnToPool();
+           // BulletPool.ReturnToPool();
             
         }
     }
     // Update is called once per frame
     void Update ()
     {
-        RB.AddForce(transform.up * Velocity);
+        RB.AddForce(transform.forward * Velocity);
 	}
 }

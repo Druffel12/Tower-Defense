@@ -4,31 +4,74 @@ using UnityEngine;
 
 public class MouseTracker : MonoBehaviour {
 
-    public GameObject particle;
+    public float Distance = 1.0f;
+    ObjectPooler Pooled;
+
+    public bool Spawnable;
+
+
+    //sets bool to false
+    private void Awake()
+    {
+        Spawnable = false;
+    }
 	
-    //shows mouse
+    //gets object pool
     void start()
     {
-        Cursor.visible = true;
+        Spawnable = GetComponent<ObjectPooler>();
+    }
+    
+    //setting mouseposition
+    void Mouse()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Distance;
+        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-    void OntriggerEnter(Collider other)
+    //spawning turret function
+    void SpawnObject()
     {
-        //if()
-        //{
+        GameObject SpawnedObject = Pooled.GetPooledObject();
+        SpawnedObject.transform.position = transform.position;
 
-        //}
+        SpawnedObject.SetActive(true);
     }
 
     // gets mouses input
     void Update ()
     {
-	    if(Input.GetButtonDown("Fire1"))
+        Mouse();
+        if(Input.GetMouseButtonDown(0))
         {
-           Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-           if (Physics.Raycast(ray))
-                Instantiate(particle, transform.position, transform.rotation);
-       
-        }	
+            SpawnObject();
+        }
 	}
 }
+
+// Now here's a sexy lady 
+//
+// 
+//    WWWWWWWW
+//  MMMMMMMMMMMM
+//  W|  _  _  |W
+//  W|  0  0  |W
+//  (          )
+//  W\_  __  _/W
+//  WWW\    /WWW
+// ____/    \____
+///              \
+//| |\   /\   /| |
+//| |  '    '  | |
+//| |          | |
+//| |__________| |
+//\_|   \{}/   |_/
+//  |    \/    |
+//  |     |    |
+//  |     |    |
+//  | ___ | __ |
+//  |/___\|/__\|
+//
+//
+//  Her name is "LadyName.tostring"   

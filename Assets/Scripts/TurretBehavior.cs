@@ -2,9 +2,8 @@
 
 public class TurretBehavior : MonoBehaviour
 {
-    bool Enemy = false;
-    private Transform target;
-    public float FireSpeed;
+    public bool Enemy = false;
+    private Transform target = null;
     public Transform Head;
 
 	// Use this for initialization
@@ -29,7 +28,7 @@ public class TurretBehavior : MonoBehaviour
         if (target != null)
         {
             Head.LookAt(target);
-            Debug.Log("shit doesnt work");
+           
         }
 	}
 }

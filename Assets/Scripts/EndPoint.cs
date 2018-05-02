@@ -9,7 +9,7 @@ public class EndPoint : MonoBehaviour
 
     NavMeshAgent agent;
     public GameObject end;
-
+     //house location seek
     void Start()
     {
         end = GameObject.Find("End Point");
