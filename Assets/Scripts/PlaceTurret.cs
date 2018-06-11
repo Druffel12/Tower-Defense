@@ -7,9 +7,19 @@ public class PlaceTurret : MonoBehaviour
     public GameObject turretPrefab;
     private GameObject Turret;
 
+    // @cole: could convert into property
     private bool TurretPlaceValid()
     {
         return Turret == null;
+    }
+
+    // ... like so!
+    private bool isTurretPlacementValid
+    {
+        get
+        {
+            return Turret == null;
+        }
     }
 
 	// Use this for initialization
